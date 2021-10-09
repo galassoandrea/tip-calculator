@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet" />
+
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+
+<body>
+  <div class="container">
+    <form class="data-input" action="calculator.js" method="POST">
+      <h5 class="sm-header">Bill</h5>
+      <input class="insert-bill" type="number" name="bill" placeholder="0" />
+      <h5 class="sm-header">Select Tip %</h5>
+
+      <div class="radio-group">
+        <input class="hidden" type="radio" name="tip" id="5" value="5" />
+        <label class="radio-label" for="5">5%</label>
+
+        <input class="hidden" type="radio" name="tip" id="10" value="10" />
+        <label class="radio-label" for="10">10%</label>
+
+        <input class="hidden" type="radio" name="tip" id="15" value="15" />
+        <label class="radio-label" for="15">15%</label>
+
+        <input class="hidden" type="radio" name="tip" id="25" value="25" />
+        <label class="radio-label" for="25">25%</label>
+
+        <input class="hidden" type="radio" name="tip" id="50" value="50" />
+        <label class="radio-label" for="50">50%</label>
+
+        <input class="hidden custom-radio" type="radio" name="tip" id="custom" value="custom" />
+        <label for="custom" class="custom-radio-label"><input class="custom-input" type="number" name="tip" id=""
+            placeholder="Custom" /></label>
+      </div>
+
+      <h5 class="sm-header">Number of People</h5>
+      <input class="insert-num" type="number" name="people-number" placeholder="0" />
+    </form>
+
+    <section class="result">
+      <div class="flex-container">
+        <div class="text-div">
+          <h5 class="result-header">Tip Amount</h5>
+          <p class="result-par">/ person</p>
+        </div>
+        <p class="price">$0.00</p>
+      </div>
+      <div class="flex-container">
+        <div class="text-div">
+          <h5 class="result-header">Total</h5>
+          <p class="result-par">/ person</p>
+        </div>
+        <p class="price">$0.00</p>
+      </div>
+      <button class="btn-reset btn-disabled" disabled>RESET</button>
+    </section>
+  </div>
+
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+      href="#">Andrea Galasso</a>.
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --opaque-strong-cyan: hsl(172, 67%, 80%);
+}
+
+* {
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  background-color: var(--light-grayish-cyan);
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  width: 650px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 20px;
+  color: var(--dark-cyan);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.sm-header {
+  margin: 10px 0;
+}
+
+.insert-bill {
+  border: none;
+  border-radius: 8px;
+  background-color: var(--very-light-grayish-cyan);
+  padding: 5px 10px;
+  color: var(--dark-cyan);
+  width: 280px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.radio-group {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+.radio-label {
+  width: 90px;
+  padding: 5px 0;
+  background-color: var(--dark-cyan);
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.radio-label:hover {
+  background-color: var(--opaque-strong-cyan);
+  color: var(--dark-cyan);
+}
+
+input[type="radio"]:checked + .radio-label {
+  background-color: var(--strong-cyan);
+}
+
+.custom-input {
+  width: 90px;
+  padding: 5px 0;
+  border: none;
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--dark-cyan);
+  text-align: center;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.custom-input:focus {
+  outline: none;
+  border: 2px solid var(--strong-cyan);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.insert-num {
+  border: none;
+  border-radius: 8px;
+  background-color: var(--very-light-grayish-cyan);
+  padding: 5px 10px;
+  color: var(--dark-cyan);
+  width: 280px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.insert-bill:focus,
+.insert-num:focus {
+  outline: none;
+  border: 2px solid var(--strong-cyan);
+}
+
+.result {
+  background-color: var(--dark-cyan);
+  color: white;
+  width: 250px;
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-header {
+  margin: 20px 0 0 0;
+}
+
+.result-par {
+  margin: 0;
+  color: var(--grayish-cyan);
+  font-size: 10px;
+  margin-bottom: 40px;
+}
+
+.price {
+  color: var(--strong-cyan);
+  font-size: 40px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.btn-reset {
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--strong-cyan);
+  border-radius: 5px;
+  font-weight: 900;
+  color: var(--dark-cyan);
+  font-size: 14px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.btn-disabled {
+  opacity: 0.3;
+  cursor: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    width: 280px;
+  }
+
+  .sm-header {
+    display: inline;
+  }
+
+  .radio-group {
+    grid-template-columns: auto auto;
+  }
+
+  .radio-label,
+  .custom-input {
+    width: 130px;
+  }
+
+  .insert-bill,
+  .insert-num {
+    width: 260px;
+    margin-bottom: 30px;
+  }
+
+  .result {
+    width: 240px;
+    padding: 15px 20px;
+  }
+
+  .result-par {
+    margin-bottom: 10px;
+  }
+
+  .price {
+    margin-top: 20px;
+  }
+}
