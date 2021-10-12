@@ -5,6 +5,7 @@ const radioButtons = document.querySelectorAll("input[type=radio]");
 const customInput = document.querySelector(".custom-input");
 const customRadioLabel = document.querySelector(".custom-radio-label");
 const customRadioBtn = document.querySelector(".custom-radio");
+const temp = document.querySelector(".temp");
 
 inputBill.addEventListener("input", function () {
   calculateTip();
@@ -23,7 +24,7 @@ for (let i = 0; i < radioButtons.length; i++) {
 customInput.addEventListener("change", function () {
   let percentage = customInput.value;
   customInput.classList.add("hidden");
-  customRadioLabel.innerHTML = percentage + "%";
+  temp.innerHTML = percentage + "%";
   customRadioLabel.classList.add("radio-label");
   customRadioBtn.value = percentage;
   customRadioBtn.checked = true;
@@ -67,4 +68,18 @@ function resetTip() {
   reset.disabled = true;
   document.querySelectorAll(".price")[0].innerHTML = "0.00";
   document.querySelectorAll(".price")[1].innerHTML = "0.00";
+  resetRadioButtons();
+}
+
+function resetRadioButtons() {
+  for (let i = 0; i < radioButtons.length; i++) {
+    radioButtons[i].checked = false;
+  }
+  
+  customRadioLabel.classList.remove("radio-label");
+  customInput.classList.remove("hidden");
+  temp.innerHTML = "";
+  customRadioBtn.value = 0;
+  customInput.value = null;
+  customInput.placeholder = "Custom";
 }
